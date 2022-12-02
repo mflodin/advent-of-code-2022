@@ -1,7 +1,6 @@
 import { readFile } from "fs/promises";
-import { findMostCalories, findTopThreeCalories } from "./01/index.js";
+import { calculateScore } from "./02/02.js";
 
-const input = await readFile("./01/input.txt", { encoding: "utf8" });
+const input = await readFile("./02/input.txt", { encoding: "utf8" });
 
-console.log(findMostCalories(input));
-console.log(findTopThreeCalories(input));
+console.log(calculateScore(input));
