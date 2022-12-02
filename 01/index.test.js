@@ -1,4 +1,4 @@
-import {findMostCalories} from './index.js'
+import {findMostCalories, findTopThreeCalories} from './index.js'
 
 const testInput = 
 `1000
@@ -22,3 +22,10 @@ test("finds the largest amount of calories carried", () => {
 
     expect(actual).toBe(24000)
 })
+
+test("finds the three largest amounts of calories carried", () => {
+    const actual = findTopThreeCalories(testInput);
+
+    expect(actual).toBe(45000)
+})
+
