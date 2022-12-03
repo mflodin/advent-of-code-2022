@@ -1,4 +1,9 @@
-import { findDuplicate, sumPriorities } from "./03";
+import {
+  findBadge,
+  findDuplicate,
+  sumBadgesPriorities,
+  sumDuplicatesPriorities,
+} from "./03";
 
 const testInput = `vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
@@ -19,5 +24,26 @@ test("should find duplicates in a line", () => {
 });
 
 test("should sum priorities of duplicates", () => {
-  expect(sumPriorities(testInput)).toBe(157);
+  expect(sumDuplicatesPriorities(testInput)).toBe(157);
+});
+
+test("should find badge in groups of three", () => {
+  const groupA = [
+    "vJrwpWtwJgWrhcsFMMfFFhFp",
+    "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+    "PmmdzqPrVvPwwTWBwg",
+  ];
+
+  expect(findBadge(groupA)).toBe("r");
+
+  const groupB = [
+    "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+    "ttgJtRGJQctTZtZT",
+    "CrZsJsPPZsGzwwsLwLmpwMDw",
+  ];
+  expect(findBadge(groupB)).toBe("Z");
+});
+
+test("should sum priorities of badges", () => {
+  expect(sumBadgesPriorities(testInput)).toBe(70);
 });
