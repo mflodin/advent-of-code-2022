@@ -1,7 +1,6 @@
 import { readFile } from "fs/promises";
-import { calculateScore, calculateScore2 } from "./02/02.js";
+import { sumPriorities } from "./03/03.js";
 
-const input = await readFile("./02/input.txt", { encoding: "utf8" });
+const input = await readFile("./03/input.txt", { encoding: "utf8" });
 
-console.log(calculateScore(input));
-console.log(calculateScore2(input));
+console.log(sumPriorities(input));
