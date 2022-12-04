@@ -1,4 +1,4 @@
-import { findFullyContainedRanges } from "./04";
+import { findFullyContainedRanges, findOverlappingRanges } from "./04";
 
 const testInput = `2-4,6-8
 2-3,4-5
@@ -10,4 +10,8 @@ const testInput = `2-4,6-8
 
 test("should find all fully contained ranges", () => {
   expect(findFullyContainedRanges(testInput)).toBe(2);
+});
+
+test("should find all fully contained ranges", () => {
+  expect(findOverlappingRanges(testInput)).toBe(4);
 });
