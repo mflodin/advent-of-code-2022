@@ -7,6 +7,20 @@ export function getTopCrateMessage(input) {
     }
   }
 
+  return getMessage(crates);
+}
+
+export function getTopCrateMessage9001(input) {
+  const { crates, moves } = parseInput(input);
+  for (const { count, from, to } of moves) {
+    const cratesToMove = crates[from].splice(-count);
+    crates[to] = [...crates[to], ...cratesToMove];
+  }
+
+  return getMessage(crates);
+}
+
+function getMessage(crates) {
   let topCrateMessage = "";
   const stacks = Object.values(crates);
   for (const stack of stacks) {
