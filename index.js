@@ -1,7 +1,6 @@
 import { readFile } from "fs/promises";
-import { findFullyContainedRanges, findOverlappingRanges } from "./04/04.js";
+import { getTopCrateMessage } from "./05/05.js";
 
-const input = await readFile("./04/input.txt", { encoding: "utf8" });
+const input = await readFile("./05/input.txt", { encoding: "utf8" });
 
-console.log(findFullyContainedRanges(input));
-console.log(findOverlappingRanges(input));
+console.log(getTopCrateMessage(input));
